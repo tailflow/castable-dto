@@ -1,0 +1,49 @@
+{
+  "name": "tailflow/castable-dto",
+  "keywords": [
+    "tailflow",
+    "laravel castable data transfer object",
+    "laravel castable value object",
+    "laravel castable dto",
+    "laravel data transfer object",
+    "laravel value object"
+  ],
+  "homepage": "https://github.com/tailflow/castable-dto",
+  "description": "Automatically cast JSON columns to PHP objects in Laravel using Spatie's data-transfer-object class",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Aleksei Zarubin",
+      "email": "alex@tailflow.org"
+    }
+  ],
+  "require": {
+    "php": ">=7.1",
+    "ext-json": "*",
+    "illuminate/contracts": "^7.0 | ^8.0",
+    "laravel/legacy-factories": "^1.1",
+    "spatie/data-transfer-object": "^1.13"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.0|^7.0|^8.0",
+    "orchestra/testbench": "^3.7|^4.0|^5.0|^6.0|^7.5"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "autoload": {
+    "psr-4": {
+      "Tailflow\\DataTransferObjects\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tailflow\\DataTransferObjects\\Tests\\": "tests"
+    }
+  },
+  "support": {
+    "issues": "https://github.com/tailflow/castable-dto/issues",
+    "source": "https://github.com/tailflow/castable-dto"
+  }
+}
