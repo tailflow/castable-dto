@@ -22,7 +22,6 @@
     "php": ">=7.1",
     "ext-json": "*",
     "illuminate/contracts": "^7.0 | ^8.0",
-    "laravel/legacy-factories": "^1.1",
     "spatie/data-transfer-object": "^1.13"
   },
   "require-dev": {
