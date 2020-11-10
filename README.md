@@ -7,7 +7,7 @@ Have you ever wanted to cast your JSON columns to a value object?
 
 This package gives you an extended version of Spatie's `DataTransferObject` class, called `CastableDataTransferObject`.
 
-Under the hood it implements Laravel's [`Castable` interface](https://laravel.com/docs/8.x/eloquent-mutators#castables) with a Laravel [custom cast](https://laravel.com/docs/7.x/eloquent-mutators#custom-casts) that handles serializing between the `DataTransferObject` (or a compatible array) and your JSON database column.
+Under the hood it implements Laravel's [`Castable`](https://laravel.com/docs/8.x/eloquent-mutators#castables) interface with a Laravel [custom cast](https://laravel.com/docs/7.x/eloquent-mutators#custom-casts) that handles serializing between the `DataTransferObject` (or a compatible array) and your JSON database column.
 
 ## Installation
 
