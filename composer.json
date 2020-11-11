@@ -38,7 +38,9 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Tailflow\\DataTransferObjects\\Tests\\": "tests"
+      "Tailflow\\DataTransferObjects\\Tests\\": "tests",
+      "Tailflow\\DataTransferObjects\\Tests\\Fixtures\\App\\": "tests/fixtures/app/",
+      "Tailflow\\DataTransferObjects\\Tests\\Fixtures\\Database\\Factories\\": "tests/fixtures/database/factories"
     }
   },
   "support": {
