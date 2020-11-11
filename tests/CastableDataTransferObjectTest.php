@@ -6,8 +6,8 @@ namespace Tailflow\DataTransferObjects\Tests;
 
 use InvalidArgumentException;
 use Spatie\DataTransferObject\DataTransferObjectError;
-use Tailflow\DataTransferObjects\Tests\fixtures\app\DataTransferObjects\Address;
-use Tailflow\DataTransferObjects\Tests\fixtures\app\Models\User;
+use Tailflow\DataTransferObjects\Tests\Fixtures\App\DataTransferObjects\Address;
+use Tailflow\DataTransferObjects\Tests\Fixtures\App\Models\User;
 
 class CastableDataTransferObjectTest extends TestCase
 {

@@ -10,7 +10,7 @@ use Tailflow\DataTransferObjects\Casts\DataTransferObject as DataTransferObjectC
 
 abstract class CastableDataTransferObjectCollection extends DataTransferObjectCollection implements Castable
 {
-    protected static $itemClass;
+    protected static string $itemClass;
 
     public function __construct(array $collection = [])
     {

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tailflow\DataTransferObjects\Tests\Fixtures\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Tailflow\DataTransferObjects\Tests\fixtures\app\Models\User;
+use Tailflow\DataTransferObjects\Tests\Fixtures\App\Models\User;
 
 class UserFactory extends Factory
 {

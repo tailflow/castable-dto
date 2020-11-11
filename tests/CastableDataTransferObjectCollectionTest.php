@@ -7,9 +7,9 @@ namespace Tailflow\DataTransferObjects\Tests;
 use Illuminate\Support\Facades\DB;
 use InvalidArgumentException;
 use Spatie\DataTransferObject\DataTransferObjectError;
-use Tailflow\DataTransferObjects\Tests\fixtures\app\DataTransferObjects\Address;
-use Tailflow\DataTransferObjects\Tests\fixtures\app\DataTransferObjects\Addresses;
-use Tailflow\DataTransferObjects\Tests\fixtures\app\Models\User;
+use Tailflow\DataTransferObjects\Tests\Fixtures\App\DataTransferObjects\Address;
+use Tailflow\DataTransferObjects\Tests\Fixtures\App\DataTransferObjects\Addresses;
+use Tailflow\DataTransferObjects\Tests\Fixtures\App\Models\User;
 
 class CastableDataTransferObjectCollectionTest extends TestCase
 {
