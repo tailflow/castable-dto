@@ -14,8 +14,8 @@ class CastableDataTransferObjectTest extends TestCase
     /** @test */
     public function it_casts_arrays_to_json(): void
     {
-        factory(User::class)->create([
-            'address' => [
+        User::factory()->create([
+            'work_address' => [
                 'country' => 'jp',
                 'city' => 'Tokyo',
                 'street' => '4-2-8 Shiba-koen',
@@ -23,17 +23,17 @@ class CastableDataTransferObjectTest extends TestCase
         ]);
 
         $this->assertDatabaseHas('users', [
-            'address->country' => 'jp',
-            'address->city' => 'Tokyo',
-            'address->street' => '4-2-8 Shiba-koen',
+            'work_address->country' => 'jp',
+            'work_address->city' => 'Tokyo',
+            'work_address->street' => '4-2-8 Shiba-koen',
         ]);
     }
 
     /** @test */
     public function it_casts_data_transfer_objects_to_json(): void
     {
-        factory(User::class)->create([
-            'address' => new Address([
+        User::factory()->create([
+            'work_address' => new Address([
                 'country' => 'jp',
                 'city' => 'Tokyo',
                 'street' => '4-2-8 Shiba-koen',
@@ -41,17 +41,17 @@ class CastableDataTransferObjectTest extends TestCase
         ]);
 
         $this->assertDatabaseHas('users', [
-            'address->country' => 'jp',
-            'address->city' => 'Tokyo',
-            'address->street' => '4-2-8 Shiba-koen',
+            'work_address->country' => 'jp',
+            'work_address->city' => 'Tokyo',
+            'work_address->street' => '4-2-8 Shiba-koen',
         ]);
     }
 
     /** @test */
     public function it_casts_json_to_a_data_transfer_object(): void
     {
-        $user = factory(User::class)->create([
-            'address' => [
+        $user = User::factory()->create([
+            'work_address' => [
                 'country' => 'jp',
                 'city' => 'Tokyo',
                 'street' => '4-2-8 Shiba-koen',
@@ -60,10 +60,10 @@ class CastableDataTransferObjectTest extends TestCase
 
         $user = $user->fresh();
 
-        self::assertInstanceOf(Address::class, $user->address);
-        self::assertEquals('jp', $user->address->country);
-        self::assertEquals('Tokyo', $user->address->city);
-        self::assertEquals('4-2-8 Shiba-koen', $user->address->street);
+        self::assertInstanceOf(Address::class, $user->work_address);
+        self::assertEquals('jp', $user->work_address->country);
+        self::assertEquals('Tokyo', $user->work_address->city);
+        self::assertEquals('4-2-8 Shiba-koen', $user->work_address->street);
     }
 
     /** @test */
@@ -71,8 +71,8 @@ class CastableDataTransferObjectTest extends TestCase
     {
         $this->expectException(DataTransferObjectError::class);
 
-        factory(User::class)->create([
-            'address' => [
+        User::factory()->create([
+            'work_address' => [
                 'bad' => 'thing',
             ],
         ]);
@@ -83,18 +83,18 @@ class CastableDataTransferObjectTest extends TestCase
     {
         $this->expectException(InvalidArgumentException::class);
 
-        factory(User::class)->create([
-            'address' => 'string',
+        User::factory()->create([
+            'work_address' => 'string',
         ]);
     }
 
     /** @test */
     public function it_handles_nullable_columns(): void
     {
-        $user = factory(User::class)->create(['address' => null]);
+        $user = User::factory()->create(['work_address' => null]);
 
-        $this->assertDatabaseHas('users', ['address' => null]);
+        $this->assertDatabaseHas('users', ['work_address' => null]);
 
-        self::assertNull($user->refresh()->address);
+        self::assertNull($user->refresh()->work_address);
     }
 }

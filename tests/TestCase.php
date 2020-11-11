@@ -14,16 +14,6 @@ abstract class TestCase extends TestbenchTestCase
     use RefreshDatabase;
 
     /**
-     * Setup the test environment.
-     */
-    protected function setUp(): void
-    {
-        parent::setUp();
-
-        $this->withFactories(__DIR__.'/fixtures/database/factories');
-    }
-
-    /**
      * Refresh the in-memory database.
      *
      * @return void

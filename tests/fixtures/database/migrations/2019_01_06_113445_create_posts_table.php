@@ -17,7 +17,8 @@ class CreatePostsTable extends Migration
             $table->bigIncrements('id');
 
             $table->string('name');
-            $table->json('address')->nullable();
+            $table->json('work_address')->nullable();
+            $table->json('delivery_addresses')->nullable();
 
             $table->timestamps();
         });
