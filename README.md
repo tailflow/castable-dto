@@ -1,7 +1,7 @@
 # Laravel Castable Data Transfer Object
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/tailflow/castable-dto.svg)](https://packagist.org/packages/tailflow/castable-dto)
-[![Build Status on Travis CI](https://img.shields.io/github/workflow/status/tailflow/castable-dto/Test)](https://github.com/tailflow/castable-dto/actions)
+[![Build Status on Travis CI](https://img.shields.io/github/workflow/status/tailflow/castable-dto/default)](https://github.com/tailflow/castable-dto/actions)
 
 Have you ever wanted to cast your JSON columns to a value object?
 
