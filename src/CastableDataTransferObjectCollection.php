@@ -5,20 +5,22 @@ declare(strict_types=1);
 namespace Tailflow\DataTransferObjects;
 
 use Illuminate\Contracts\Database\Eloquent\Castable;
-use Spatie\DataTransferObject\DataTransferObjectCollection;
+use Illuminate\Contracts\Support\Arrayable;
+use Illuminate\Support\Collection;
 use Tailflow\DataTransferObjects\Casts\DataTransferObject as DataTransferObjectCast;
 
-abstract class CastableDataTransferObjectCollection extends DataTransferObjectCollection implements Castable
+abstract class CastableDataTransferObjectCollection implements Castable, Arrayable
 {
     protected static string $itemClass;
+    protected Collection $collection;
 
     public function __construct(array $collection = [])
     {
         $itemClass = static::$itemClass;
 
-        $this->collection = array_map(function($item) use ($itemClass) {
+        $this->collection = collect($collection)->map(function($item) use ($itemClass) {
             return is_array($item) ? new $itemClass($item) : $item;
-        }, $collection);
+        });
     }
 
     public static function castUsing(array $arguments): DataTransferObjectCast
@@ -37,6 +39,11 @@ abstract class CastableDataTransferObjectCollection extends DataTransferObjectCo
 
         $itemClass = static::$itemClass;
 
-        return new static($itemClass::arrayOf($collection));
+        return collect($itemClass::arrayOf($collection));
+    }
+
+    public function toArray(): array
+    {
+        return $this->collection->toArray();
     }
 }

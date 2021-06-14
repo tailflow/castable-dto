@@ -6,6 +6,7 @@ namespace Tailflow\DataTransferObjects\Casts;
 
 use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 use InvalidArgumentException;
 
 class DataTransferObject implements CastsAttributes
@@ -28,6 +29,7 @@ class DataTransferObject implements CastsAttributes
      * @param string $key
      * @param mixed $value
      * @param array $attributes
+     * @return void
      */
     public function get($model, string $key, $value, $attributes)
     {
@@ -55,6 +57,10 @@ class DataTransferObject implements CastsAttributes
 
         if (is_array($value)) {
             $value = new $this->class($value);
+        }
+
+        if ($value instanceof Collection) {
+            $value = new $this->class($value->toArray());
         }
 
         if (!$value instanceof $this->class) {
