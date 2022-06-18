@@ -1,5 +1,8 @@
 # Laravel Castable Data Transfer Object
 
+### Deprecated
+Please consider using [tailflow/dto](https://github.com/tailflow/castable-dto) instead.
+
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/tailflow/castable-dto.svg)](https://packagist.org/packages/tailflow/castable-dto)
 [![Build Status on Travis CI](https://img.shields.io/github/workflow/status/tailflow/castable-dto/default)](https://github.com/tailflow/castable-dto/actions)
 
